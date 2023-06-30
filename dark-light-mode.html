@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark & Light Mode</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        main {
+            width: 100%;
+            min-height: calc(100vh - 70px);
+            padding: 0 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: justify;
+        }
+
+        main p {
+            font-size: 1.1rem;
+            line-height: 30px;
+        }
+
+        header {
+            width: 100%;
+            height: 70px;
+            position: relative;
+            border-bottom: 1px solid rgb(202, 202, 202);
+        }
+
+        label {
+            position: absolute;
+            width: 64px;
+            height: 32px;
+            right: 20px;
+            top: 20px;
+            border: 2px solid;
+            border-radius: 20px;
+        }
+
+        label:before {
+            position: absolute;
+            content: "";
+            width: 24px;
+            height: 24px;
+            left: 2px;
+            top: 2px;
+            border-radius: 50%;
+            background-color: black;
+            cursor: pointer;
+            transition: all 0.4s linear;
+        }
+
+        label.active:before {
+            left: 34px;
+            background-color: white;
+        }
+
+        body.night {
+            background-color: black;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <label id="dark-mode"></label>
+    </header>
+
+    <main>
+        <h1>Dark & Light Mode</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam sapiente minima illo nostrum, laborum iure aliquam deleniti architecto, aut tempore ab. Sequi cumque esse ipsam veritatis eveniet impedit assumenda laudantium? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae eius itaque magni, doloribus consequatur delectus laborum temporibus, perferendis enim quod iure excepturi, assumenda doloremque fugit? Ad esse laborum molestias nihil. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas tempore hic sint similique nemo iure debitis consequuntur vitae, nostrum ab sed ullam repellendus qui amet! Nostrum et velit suscipit accusantium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium, asperiores fugit vitae commodi saepe, nulla nihil nisi, hic aut illo nam sit eveniet. Molestias recusandae architecto cupiditate eum beatae consequatur. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae laborum, accusantium omnis sint fugiat dicta velit quos natus doloribus eius qui itaque hic nisi eveniet consectetur repellendus inventore corporis earum?</p>
+    </main>
+
+    <script>
+
+        var content = document.getElementsByTagName('body')[0];
+        var darkMode = document.getElementById('dark-mode');
+
+        darkMode.addEventListener('click', function(){
+            darkMode.classList.toggle('active');
+            content.classList.toggle('night');
+        })
+
+    </script>
+    
+</body>
+</html>
